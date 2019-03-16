@@ -6,7 +6,7 @@ const Survey = () => {
 
         <div className="App">
 
-        <p>Are you an Early bird or a Night Owl?</p>
+        <p>Are you an Early Bird or a Night Owl?</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked />
                 <label class="form-check-label" for="exampleRadios1">
