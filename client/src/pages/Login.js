@@ -5,17 +5,15 @@ import Footer from "../components/Footer";
 
 
 
-
-function Home() {
+function Login() {
     return (
         <div>
             <Navbar />
             <Hero />
-            <p>This is the home page</p>
             <Footer />
 
         </div>
     );
 }
 
-export default Home;
+export default Login;
