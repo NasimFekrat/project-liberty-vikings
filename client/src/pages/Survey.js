@@ -2,20 +2,20 @@ import React from "react";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Questionairre from "../components/Questionairre";
 
 
 
-
-function Home() {
+function Survey() {
     return (
         <div>
             <Navbar />
             <Hero />
-            <p>This is the home page</p>
+            <Questionairre />
             <Footer />
 
         </div>
     );
 }
 
-export default Home;
+export default Survey;
