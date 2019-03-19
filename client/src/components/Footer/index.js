@@ -1,10 +1,10 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 
 function Footer() {
   return (
     <footer className="footer">
-      <span>Liberty Vikings 2019</span>
+      <span className="copyright">Liberty Vikings 2019</span>
     </footer>
   );
 }
