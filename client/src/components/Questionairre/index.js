@@ -1,7 +1,11 @@
 import React from "react";
 import "./Survey.css";
 
+
 const Survey = () => {
+    state = {
+        
+    }
     return (
 
         <div className="App">
@@ -44,6 +48,7 @@ const Survey = () => {
                 </div>
             </div>
         </div>
+        
     );
 
 }
