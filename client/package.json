@@ -1,14 +1,20 @@
 {
   "name": "mern",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "Room Sharing App",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "axios": "^0.18.0",
+    "chart.js": "^2.8.0",
     "react": "^16.6.3",
+    "react-burger-menu": "^2.6.5",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.6.3",
+    "react-emoji-render": "^0.6.0",
+    "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.4.0",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
