@@ -3,7 +3,7 @@ import Tableheader from "./Subcomponents/Tableheader"
 import Tablerow from "./Subcomponents/Tablerow"
 import Modal from "./Subcomponents/Modal/Modal"
 import axios from "axios";
-import './currentMeeting.css';
+import './currentPost.css';
 
 class Review extends React.Component {
 
@@ -11,7 +11,7 @@ class Review extends React.Component {
     super(props);
     this.state = {
       user: "",
-      meetingId: "",
+      postId: "",
       ended: true,
       commentBy: "?",
       commentAbout: "?",
@@ -21,27 +21,27 @@ class Review extends React.Component {
       availableUsers: [
         {
           userId: 1,
-          name: "Tony"
+          name: "David"
         },
         {
           userId: 2,
-          name: "Dawn"
+          name: "Parker"
         },
         {
           userId: 3,
-          name: "Greg"
+          name: "Jessa"
         },
         {
           userId: 4,
-          name: "Ryan"
+          name: "Nasim"
         },
         {
           userId: 5,
-          name: "Jess"
+          name: "Parham"
         },
         {
           userId: 6,
-          name: "Sam"
+          name: "Ryan"
         }]
     }
 
@@ -55,17 +55,17 @@ class Review extends React.Component {
     let url = new URL(window.location.href);
     let qryVal = url.searchParams.get("id");
     if (qryVal) {
-      axios.get("/api/meetings/" + qryVal)
+      axios.get("/api/posts/" + qryVal)
         .then(res => this.setState({
           ended: res.data.ended,
-          meetingId: qryVal
+          postId: qryVal
         }))
-        // .then(res => this.props.history.push("/meetings")) // redirect to home page
+        // .then(res => this.props.history.push("/posts")) // redirect to home page
         .catch(err => console.log(err));
       // this.setState({ mode });
     }
     else {
-      console.log("Not active meeting");
+      console.log("Not active post");
     };
   }
 
@@ -119,7 +119,7 @@ class Review extends React.Component {
 
   submitRating = event => {
     axios.post("/api/comments/", {
-      meetingId: this.state.meetingId,
+      postId: this.state.postId,
       commentBy: this.state.commentBy,
       commentAbout: this.state.commentAbout,
       rating: this.state.rating,
@@ -171,18 +171,18 @@ class Review extends React.Component {
   // }
 
   addComment = id => {
-    console.log("meetingid: " + this.state.meetingId);
+    console.log("postid: " + this.state.postId);
     let update = { $push: { comments: id } }
-    axios.put("/api/meetings/" + this.state.meetingId, update)
+    axios.put("/api/posts/" + this.state.postId, update)
       .then(res => {
         console.log(res);
       })
       .catch(err => console.log(err));
   }
 
-  endMeeting = id => {
+  endPost = id => {
     let update = { ended: true }
-    axios.put("/api/meetings/" + this.state.meetingId, update)
+    axios.put("/api/posts/" + this.state.postId, update)
       .then(res => {
         console.log(res);
       })
@@ -201,7 +201,7 @@ class Review extends React.Component {
               <table className="tableBG table table-bordered">
                 <thead>
                   <tr>
-                    <th><a className="btn btn-primary" href={"/meeting-details/?id=" + this.state.meetingId} onClick={this.endMeeting}>End Meeting</a></th>
+                    <th><a className="btn btn-primary" href={"/post-details/?id=" + this.state.postId} onClick={this.endPost}>End Post</a></th>
                     {this.state.availableUsers.map(user => (
                       <Tableheader name={user.name} photo={user.photo} key={user.name + "header"} />
                     ))}
@@ -231,7 +231,7 @@ class Review extends React.Component {
             <h1> Roomer </h1>
           </div>
           <div className="Review">
-            <p>This meeting is currently unavailable or has ended. Please contact your meeting coordinator if you feel this is an error</p>
+            <p>This post is currently unavailable or has ended. Please contact your post coordinator if you feel this is an error</p>
           </div>
           <footer className="logoutFooter font-small blue">
             <div className="footer-copyright py-3 text-center">
@@ -250,7 +250,7 @@ class Review extends React.Component {
           </div>
           <div className="Review">
             <br />
-            <h1> Current Meeting </h1>
+            <h1> Current Post </h1>
             <br />
             <p className="sorry">Sorry, you really need to be logged in for this page.</p>
           </div>

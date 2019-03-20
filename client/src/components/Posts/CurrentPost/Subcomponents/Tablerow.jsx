@@ -21,7 +21,7 @@ class Tablerow extends React.Component {
         {this.props.availableUsers.map(user => {
           if(user.name !== this.props.name){
             return (
-              <td key={`${user.name}-row${this.state.row++}`} data={user.name} value={user.name} name="commentAbout" className="bg-dark text-light review-option" onClick={this.props.logThis} data-toggle="modal" data-target="#meetingmodal">
+              <td key={`${user.name}-row${this.state.row++}`} data={user.name} value={user.name} name="commentAbout" className="bg-dark text-light review-option" onClick={this.props.logThis} data-toggle="modal" data-target="#postmodal">
             </td>
           )
           }
