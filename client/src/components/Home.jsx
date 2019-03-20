@@ -70,7 +70,23 @@ const Home = props => {
 					<br />
 					{/* <h1> you are logged out </h1> */}
 					{/* box links  */}
-					<section className="boxes">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<div id="my-slider" class="carousel slide" data-ride="carousel">
+									{/* indicators (dot nav) */}
+
+									{/* wrapper for slides */}
+
+									{/* controls AKA next and prev buttons */}
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* <section className="boxes">
 
 						<div className="row">
 							<div className="col-md-6 col-lg-4">
@@ -91,7 +107,7 @@ const Home = props => {
 								</div>
 							</div>
 						</div>
-					</section>
+					</section> */}
 				</div>
 				<footer className="absoluteFooter font-small blue">
 					<div className="footer-copyright py-3 text-center">
