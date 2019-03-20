@@ -4,7 +4,7 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span className="copyright">Liberty Vikings 2019</span>
+      <span className="copyright">© Copyright Liberty Vikings 2019</span>
     </footer>
   );
 }
