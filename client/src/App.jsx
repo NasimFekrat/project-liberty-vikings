@@ -6,10 +6,10 @@ import LoginForm from './components/Login/LoginForm';
 import SignupForm from './components/SignupForm';
 import Header from './components/Header';
 import Home from './components/Home';
-import MeetingDetail from "./components/Meetings/MeetingDetail";
-import MeetingStats from './components/Meetings/MeetingStats';
-import MeetingMainMenu from './components/Meetings/MeetingMainMenu';
-import CurrentMeeting from './components/Meetings/CurrentMeeting/CurrentMeeting';
+import PostDetail from "./components/Posts/PostDetail";
+import PostStats from './components/Posts/PostStats';
+import PostMainMenu from './components/Posts/PostMainMenu';
+import CurrentPost from './components/Posts/CurrentPost/CurrentPost';
 import Chat from "./components/Chat/Chat";
 import { slide as Menu } from 'react-burger-menu';
 import NoMatch from "./components/NoMatch";
@@ -22,8 +22,8 @@ const DisplayLinks = props => {
 
 			<Menu>
 				<a className="menu-item" href="/">Home</a>
-				<a className="menu-item" href="/meetings">Meeting</a>
-				<a className="menu-item" href="/meeting-stats">Meeting Stats</a>
+				<a className="menu-item" href="/posts">Post</a>
+				<a className="menu-item" href="/post-stats">Post Stats</a>
 				<a className="menu-item" onClick={props._logout}>Logout</a>
 			</Menu>
 			
@@ -131,25 +131,25 @@ class App extends Component {
 							user={this.state.user} />} 
 						/>
 				<Route 
-					exact path="/meetings" 
+					exact path="/posts" 
 					render={() => 
-						<MeetingMainMenu 
+						<PostMainMenu 
 							user={this.state.user} />} 
 						/>
 				<Route 
-					exact path="/meeting-stats" 
+					exact path="/post-stats" 
 					render={() => 
-						<MeetingStats 
+						<PostStats 
 							user={this.state.user} />} 
 						/>
 				<Route 
-					exact path="/meeting-details" 
-					component={MeetingDetail} 
+					exact path="/post-details" 
+					component={PostDetail} 
 					/>
 				<Route
 					path="/current"
 					render={() =>
-						<CurrentMeeting
+						<CurrentPost
 							user={this.state.user} />}
 				/>
 				<Route
