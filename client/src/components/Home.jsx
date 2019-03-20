@@ -1,4 +1,8 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import LoggedOutHomeMain from '../components/LoggedOutHomeMain';
+import LoggedInHomeMain from '../components/LoggedInHomeMain';
 
 // TODO - add proptypes
 
@@ -8,16 +12,8 @@ const Home = props => {
 			// outer most div
 			<div>
 
-				<div className="Home">
-					<h1> Roomer </h1>
-					{/* <h1> Roomer </h1>
-					<p>Current User:</p>
-					<code>
-						{JSON.stringify(props)}
-
-					</code> */}
-				</div>
-
+				<Navbar />
+{/* 
 				<section className="grid">
 					<p>Are you ready to share the house!</p>
 					<h2 className="">Available Rooms</h2>
@@ -42,15 +38,9 @@ const Home = props => {
 							</div>
 						</div>
 					</div>
-				</section>
-
-
-				<footer className="logoutFooter font-small blue">
-					<div className="footer-copyright py-3 text-center">
-						© Copyright:
-       				 	<a> Liberty Vikings </a>
-					</div>
-				</footer>
+				</section> */}
+				<LoggedInHomeMain />
+				<Footer />
 
 
 
@@ -62,43 +52,9 @@ const Home = props => {
 	} else {
 		return (
 			<div>
-				<div className="Home">
-					<h1> Roomer </h1>
-				</div>
-				<div className="loggedOut">
-					<h1> WELCOME to ROOMER App! </h1>
-					<br />
-					{/* <h1> you are logged out </h1> */}
-					{/* box links  */}
-					<section className="boxes">
-
-						<div className="row">
-							<div className="col-md-6 col-lg-4">
-								<div className="learnBox">
-									<a><p>Learn About Your Peers</p></a>
-								</div>
-							</div>
-							<div className="col-md-6 col-lg-4">
-								<div className="teachBox">
-									<a ><p>Teach Your Peers About You</p></a>
-
-								</div>
-							</div>
-							<div className="col-md-6 col-lg-4">
-								<div className="feelingsBox">
-									<a ><p>Get Your Feelings Hurt</p></a>
-
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-				<footer className="absoluteFooter font-small blue">
-					<div className="footer-copyright py-3 text-center">
-						© Copyright:
-       				 <a> Liberty Vikings </a>
-					</div>
-				</footer>
+				<Navbar />
+				<LoggedOutHomeMain />
+				<Footer />
 			</div>
 			// <div className="Home">
 			// 	<p>Current User:</p>
@@ -111,4 +67,4 @@ const Home = props => {
 	}
 }
 
-export default Home
+export default Home;
