@@ -15,6 +15,7 @@ import { slide as Menu } from 'react-burger-menu';
 import NoMatch from "./components/NoMatch";
 
 
+
 const DisplayLinks = props => {
 	if (props.loggedIn) {
 		return (
@@ -25,6 +26,7 @@ const DisplayLinks = props => {
 				<a className="menu-item" href="/post-stats">Post Stats</a>
 				<a className="menu-item" onClick={props._logout}>Logout</a>
 			</Menu>
+			
 
 		)
 	} else {
@@ -163,7 +165,7 @@ class App extends Component {
 				<Route component={NoMatch} />
 				</Switch>
 
-				<DisplayChat _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} />
+				{/* <DisplayChat _logout={this._logout} loggedIn={this.state.loggedIn} user={this.state.user} /> */}
 				
 			</div>
 		)
