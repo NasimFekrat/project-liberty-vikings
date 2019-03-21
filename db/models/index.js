@@ -1,4 +1,4 @@
 module.exports = {
-  Meeting: require("./meeting"),
+  Post: require("./post"),
   Comments: require("./comment")
 };

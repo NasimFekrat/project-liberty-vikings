@@ -1,7 +1,10 @@
 import React from 'react';
 import axios from "axios";
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import LoggedOut from '../LoggedOut';
 
-class MeetingMainMenu extends React.Component {
+class PostMainMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +12,7 @@ class MeetingMainMenu extends React.Component {
       createdBy: "",
       eventDate: "",
       location: "",
-      searchedMeetingId: "",
+      searchedPostId: "",
       searchedCreatedBy: "",
       searchedEventDate: "",
       searchedLocation: "",
@@ -46,10 +49,10 @@ class MeetingMainMenu extends React.Component {
         isValid: true
       });
       console.log(this.state.user)
-      axios.post("/api/meetings", this.state)
+      axios.post("/api/posts", this.state)
         .then(res => {
           console.log(this.state);
-          this.setState({ meetingID: res.data._id });
+          this.setState({ postID: res.data._id });
         })
         .catch(err => console.log(err));
     }
@@ -68,15 +71,15 @@ class MeetingMainMenu extends React.Component {
 
   onSearch = (e) => {
     e.preventDefault();
-    if (this.state.searchedMeetingId) {
+    if (this.state.searchedPostId) {
       this.setState({
         isValid: true
       });
-      axios.get("/api/meetings/" + this.state.searchedMeetingId)
+      axios.get("/api/posts/" + this.state.searchedPostId)
         // .then(res => console.log(res))5ae9008a629a2e4b622030e2
         .then(res => this.setState({
           returnedResults: true,
-          searchedMeetingId: res.data._id,
+          searchedPostId: res.data._id,
           searchedCreatedBy: res.data._id,
           searchedEventDate: res.data.eventDate,
           searchedLocation: res.data.location
@@ -97,26 +100,24 @@ class MeetingMainMenu extends React.Component {
     if (this.state.user) {
       return (
         <div>
-          <div className="Home">
-            <h1> Roomer </h1>
-          </div>
-          <div className="MeetingMainMenu">
+          <Navbar />
+          <div className="PostMainMenu">
             <div className="row">
               <div className="col-sm-6">
                 <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">Join a Meeting</h5>
+                    <h5 className="card-title">Create a Post</h5>
                     <div className="form-group">
                       <input
                         type="text"
                         className="form-control"
-                        name="searchedMeetingId"
-                        id="searchedMeetingId"
-                        value={this.state.searchedMeetingId}
+                        name="searchedPostId"
+                        id="searchedPostId"
+                        value={this.state.searchedPostId}
                         onChange={this.onChange}
                         placeholder="ABC123@"
                       />
-                      <button type="submit" className="btn btn-primary" onClick={this.onSearch} id="meetingSearch">Search</button>
+                      <button type="submit" className="btn btn-primary" onClick={this.onSearch} id="postSearch">Search</button>
                     </div>
                   </div>
                 </div>
@@ -128,7 +129,7 @@ class MeetingMainMenu extends React.Component {
                         <h5 className="mb-1">{this.state.searchedLocation}</h5>
                         <small className="text-muted">{this.state.searchedEventDate}</small>
                       </div>
-                      <a href={"/current/?id=" + this.state.searchedMeetingId}><strong>Join Meeting</strong></a>
+                      <a href={"/current/?id=" + this.state.searchedPostId}><strong>Read the other's Posts</strong></a>
                       <p className="text-muted">Created by: {this.state.searchedCreatedBy}</p>
                     </div>
                   </div>) : (
@@ -138,8 +139,8 @@ class MeetingMainMenu extends React.Component {
               <div className="col-sm-6">
                 <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">Create a Meeting</h5>
-                    <form id="createMeetingForm">
+                    <h5 className="card-title">Create a Post</h5>
+                    <form id="createPostForm">
                       <div className="form-group">
                         <label htmlFor="createdBy">Created By</label>
                         <input
@@ -164,7 +165,7 @@ class MeetingMainMenu extends React.Component {
                         />
                       </div>
                       <div className="form-group">
-                        <label htmlFor="location">Location or Platform</label>
+                        <label htmlFor="location">Location</label>
                         <input
                           type="text"
                           className="form-control"
@@ -172,10 +173,10 @@ class MeetingMainMenu extends React.Component {
                           id="location"
                           value={this.state.location}
                           onChange={this.onChange}
-                          placeholder="Location or Platform"
+                          placeholder="Location"
                         />
                       </div>
-                      {this.state.meetingID ? <div><p>Click or share this link: <a href={"/current/?id=" + this.state.meetingID}>{`${window.location.origin}${window.location.pathname}`}/current/?id={this.state.meetingID}</a></p></div> : <p>No meeting is currently available</p>}
+                      {this.state.postID ? <div><p>Click or share this link: <a href={"/current/?id=" + this.state.postID}>{`${window.location.origin}${window.location.pathname}`}/current/?id={this.state.postID}</a></p></div> : <p>No post is currently available</p>}
 
                       <button type="submit" className="btn btn-primary" onClick={this.onSubmit}>Submit</button>
                     </form>
@@ -184,36 +185,18 @@ class MeetingMainMenu extends React.Component {
               </div>
             </div>
           </div>
-          <footer className="logoutFooter font-small blue">
-              <div className="footer-copyright py-3 text-center">
-                © Copyright:
-       				 	<a> Liberty Vikings </a>
-              </div>
-            </footer>
+          <Footer />
         </div>
       )
     } else {
       return (
         <div>
-
-          <div className="Home">
-            <h1> Roomer </h1>
-          </div>
-          <div className="MeetingMainMenu">
-            <br />
-            <h1> Join or Create a Meeting </h1>
-            <br />
-            <p className="sorry">Sorry, you really need to be <a href="/">logged in</a> for this page.</p>
-          </div>
-          <footer className="logoutFooter font-small blue">
-            <div className="footer-copyright py-3 text-center">
-              © Copyright:
-       				 		<a> Liberty Vikings </a>
-            </div>
-          </footer>
+        <Navbar />
+        <LoggedOut />
+        <Footer />
         </div>
       )
     }
   }
 }
-export default MeetingMainMenu;
+export default PostMainMenu;

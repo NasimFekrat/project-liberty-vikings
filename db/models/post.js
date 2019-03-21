@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const meetingSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
   createdBy: {
     type: String,
     require: true
@@ -29,4 +29,4 @@ const meetingSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("Meeting", meetingSchema);
+module.exports = mongoose.model("Post", postSchema);

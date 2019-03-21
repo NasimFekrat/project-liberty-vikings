@@ -4,11 +4,11 @@ import './modal.css';
 class Modal extends React.Component {
 
   render() {
-    return (<div className="modal fade" id="meetingmodal" tabIndex="-1" role="dialog" aria-labelledby="meetingmodalTitle" aria-hidden="true">
+    return (<div className="modal fade" id="postmodal" tabIndex="-1" role="dialog" aria-labelledby="postmodalTitle" aria-hidden="true">
       <div className="modal-dialog" role="document">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="meetingmodalTitle">Please provide a rating for {this.props.commentAbout}</h5>
+            <h5 className="modal-title" id="postmodalTitle">Please provide a rating for {this.props.commentAbout}</h5>
             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

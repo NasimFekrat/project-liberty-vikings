@@ -6,6 +6,9 @@ import "survey-react/survey.css";
 
 
   
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 
 class SignupForm extends Component {
 
@@ -255,12 +258,9 @@ class SignupForm extends Component {
 		return (
 			<div>
 
-				<div className="Home">
-					<h1> Roomer </h1>
-				</div>
-				<Survey.Survey model={model} onComplete={this.onComplete}/>
+				<Navbar />
 				<div className="SignupForm">
-					<h1>Signup form</h1>
+					<h2>Signup Form</h2>
 					<form>
 						<div className="form-row">
 							<div className="form-group col-md-3">
@@ -352,12 +352,7 @@ class SignupForm extends Component {
 						<button className="btn btn-primary" type="submit" onClick={this.handleSubmit}>Sign up</button>
 					</form>
 				</div>
-				<footer className="staticFooter font-small blue">
-					<div className="footer-copyright py-3 text-center">
-						© Copyright:
-       				 <a> Liberty Vikings </a>
-					</div>
-				</footer>
+				<Footer />
 			</div>
 		)
 	}
