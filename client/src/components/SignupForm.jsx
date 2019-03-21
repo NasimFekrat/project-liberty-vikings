@@ -19,7 +19,7 @@ class SignupForm extends Component {
 				type: "rating",
 				name: "question1",
 				title: "Are you an Early Bird or Night Owl?",
-  				rateValues: [{value: 1, text: "Early Bird"},{value: 2, text: "Average"}, {value: 3, text: "Good"}]
+  				rateValues: [{value: 1, text: "Early Bird"},{value: 2, text: "Both"}, {value: 3, text: "Night Owl"}]
 			},
 
 			{
@@ -61,7 +61,7 @@ class SignupForm extends Component {
 				type: "rating",
 				name: "question7",
 				title: "If something is bothering you are you more likely to communicate or keep to yourself?",
-  				rateValues: [{value: 1, text: "Bad"},{value: 2, text: "Average"}, {value: 3, text: "Good"}]
+  				rateValues: [{value: 1, text: "communicate"},{value: 2, text: "I don't get bothered"}, {value: 3, text: "keep tp myself"}]
 			}
 			
 		]
@@ -259,6 +259,7 @@ class SignupForm extends Component {
 			<div>
 
 				<Navbar />
+				<Survey.Survey model={model} onComplete={this.onComplete}/>
 				<div className="SignupForm">
 					<h2>Signup Form</h2>
 					<form>
@@ -349,7 +350,7 @@ class SignupForm extends Component {
 								/>
 							</div>
 						</div>
-						<button className="btn btn-primary" type="submit" onClick={this.handleSubmit}>Sign up</button>
+						<button className="btn btn-warning" type="submit" onClick={this.handleSubmit}>Sign up</button>
 					</form>
 				</div>
 				<Footer />
