@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import Navbar from '../Navbar'
+import Footer from '../Footer';
 
 class LoginForm extends Component {
 	constructor() {
@@ -35,9 +37,7 @@ class LoginForm extends Component {
 		} else {
 			return (
 				<div className="LoginForm">
-					<div className="Home">
-						<h1> Roomer </h1>
-					</div>
+					<Navbar />
 
 					<div className="marginLoginForm">
 						<h1>Login form</h1>
@@ -63,12 +63,7 @@ class LoginForm extends Component {
 							{/* <img src={googleButton} alt="sign into Google Button" /> */}
 						</a>
 					</div>
-					<footer className="logoutFooter font-small blue">
-						<div className="footer-copyright py-3 text-center">
-							© Copyright:
-       				 		<a> Liberty Vikings </a>
-						</div>
-					</footer>
+					<Footer />
 				</div>
 			)
 		}

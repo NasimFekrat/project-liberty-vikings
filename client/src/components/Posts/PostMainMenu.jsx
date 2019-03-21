@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from "axios";
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import LoggedOut from '../LoggedOut';
 
 class PostMainMenu extends React.Component {
   constructor(props) {
@@ -97,9 +100,7 @@ class PostMainMenu extends React.Component {
     if (this.state.user) {
       return (
         <div>
-          <div className="Home">
-            <h1> Roomer </h1>
-          </div>
+          <Navbar />
           <div className="PostMainMenu">
             <div className="row">
               <div className="col-sm-6">
@@ -184,33 +185,15 @@ class PostMainMenu extends React.Component {
               </div>
             </div>
           </div>
-          <footer className="logoutFooter font-small blue">
-              <div className="footer-copyright py-3 text-center">
-                © Copyright:
-       				 	<a> Liberty Vikings </a>
-              </div>
-            </footer>
+          <Footer />
         </div>
       )
     } else {
       return (
         <div>
-
-          <div className="Home">
-            <h1> Roomer </h1>
-          </div>
-          <div className="PostMainMenu">
-            <br />
-            <h1> Join or Create a Post </h1>
-            <br />
-            <p className="sorry">Sorry, you really need to be <a href="/">logged in</a> for this page.</p>
-          </div>
-          <footer className="logoutFooter font-small blue">
-            <div className="footer-copyright py-3 text-center">
-              © Copyright:
-       				 		<a> Liberty Vikings </a>
-            </div>
-          </footer>
+        <Navbar />
+        <LoggedOut />
+        <Footer />
         </div>
       )
     }

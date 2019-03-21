@@ -11,19 +11,19 @@ function LoggedInHomeMain() {
             <div className="row">
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
-                        <img className="teamMatePic" src={"../../images/hotel.png"} alt="thumbnail"></img> room
+                        <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> room
 								<p>Picture</p>
                     </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
-                    <img className="teamMatePic" src={"../../images/hotel.png"} alt="thumbnail"></img> room
+                    <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> room
 								<p>Picture</p>
                     </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
-                        <img className="teamMatePic" src={"../../images/hotel.png"} alt="thumbnail"></img> room
+                        <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> room
 								<p>Picture</p>
                     </div>
                 </div>
