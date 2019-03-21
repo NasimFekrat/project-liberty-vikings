@@ -1,7 +1,10 @@
 .footer {
     text-align: center;
+    background-color: black;
+    padding: 30px;
 }
 
 .copyright {
     color: whitesmoke;
+    font-family: 'Raleway', sans-serif;
 }

@@ -1,4 +1,8 @@
 .navbar-brand {
-font-family: 'Lalezar', cursive;
-font-size: 60px;
+font-family: 'Comfortaa', cursive;
+font-size: 40px;
+}
+
+.navbar {
+    background-color: black;
 }
