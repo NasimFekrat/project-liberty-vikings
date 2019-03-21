@@ -2,6 +2,11 @@ import React from 'react';
 import Emoji from 'react-emoji-render';
 // TODO - add proptypes
 
+const headerStyle = {
+	color: "whitesmoke",
+	padding: "10px"
+};
+
 const Header = props => {
 
 	let Greeting
@@ -9,23 +14,23 @@ const Header = props => {
 		Greeting = <p>Hello <Emoji text=":)"/></p>
 	} else if (props.user.firstName) {
 		Greeting = (
-			<p>
+			<p style={headerStyle}>
 				Welcome back, <strong>{props.user.firstName}</strong> <Emoji text="❤️"/>
 			</p>
 		)
 	} else if (props.user.local.username) {
 		Greeting = (
-			<p>
+			<p style={headerStyle}>
 				Welcome back, <strong>{props.user.local.username} </strong> <Emoji text="❤️"/>
 			</p>
 		)
 	}
 	return (
 		
-		<div className="Header">
+		<div className="Header" >
 			{Greeting}
 		</div>
 	)
 }
 
-export default Header
+export default Header;

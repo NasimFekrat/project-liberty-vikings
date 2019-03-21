@@ -11,7 +11,6 @@ const Home = props => {
 		return (
 			// outer most div
 			<div>
-
 				<Navbar />
 				<LoggedInHomeMain />
 				<Footer />

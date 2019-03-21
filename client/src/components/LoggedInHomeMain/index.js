@@ -5,28 +5,30 @@ import "./style.css";
 function LoggedInHomeMain() {
     return (
         <section className="grid">
-            <p>Are you ready to share the house!</p>
-            <h2 className="">Available Rooms</h2>
+            <div className="content">
+            <h2>Are you ready to share the house!</h2>
+            <h4>Available Rooms</h4>
 
             <div className="row">
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
-                        <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> room
+                        <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> 
 								<p>Picture</p>
                     </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
-                    <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> room
+                    <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> 
 								<p>Picture</p>
                     </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
-                        <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> room
+                        <img className="teamMatePic" src={"../images/hotel.png"} alt="thumbnail"></img> 
 								<p>Picture</p>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
     );
