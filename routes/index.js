@@ -11,14 +11,4 @@ router.use("/api/posts", postRoutes);
 router.use("/api/comments", commentRoutes);
 router.use("/auth", authRoutes);
 
-// If no API routes are hit, send the React app
-// Serve the UI over express server
-router.get("*", function (req, res) {
-  if (process.env.NODE_ENV === "production") {
-      res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  } else {
-      res.sendFile(path.join(__dirname, './client/public/'));
-  }
-});
-
 module.exports = router;
