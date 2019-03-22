@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-
+import Modal from "./Modal.js";
 
   
 import Navbar from '../components/Navbar';
@@ -53,7 +53,7 @@ class SignupForm extends Component {
 			{
 				type: "rating",
 				name: "question6",
-				title: "are you a neat?",
+				title: "are you a neatfreak?",
   				rateValues: [{value: 1, text: "Yes"},{value: 2, text: "Somewhat tidy"}, {value: 3, text: "No"}]
 			},
 
@@ -61,7 +61,7 @@ class SignupForm extends Component {
 				type: "rating",
 				name: "question7",
 				title: "If something is bothering you are you more likely to communicate or keep to yourself?",
-  				rateValues: [{value: 1, text: "communicate"},{value: 2, text: "I don't get bothered"}, {value: 3, text: "keep tp myself"}]
+  				rateValues: [{value: 1, text: "communicate"},{value: 2, text: "I don't get bothered"}, {value: 3, text: "keep to myself"}]
 			}
 			
 		]
@@ -83,12 +83,15 @@ class SignupForm extends Component {
 			redirectTo: null,
 			personaName: '',
 			personaPhoto: '',
-			personaDescription: ''
+			personaDescription: '',
+			isShow: false
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
 		this.onComplete= this.onComplete.bind(this);
 	}
+
+	
 	handleChange(event) {
 		this.setState({
 			[event.target.name]: event.target.value
@@ -170,7 +173,7 @@ class SignupForm extends Component {
 			{
 				name: "Passionate Penguin",
 				photo: "https://animalinyou.com/animals/penguin/Penguin_files/646px-Penguins_walking_-Moltke_Harbour,_South_Georgia,_British_overseas_territory,_UK-8.jpg",
-				description: "Aggressive yet gentle, outgoing but shy, stable yet flighty - everyone sees the penguin in a different way. It's that black and white thing: the penguin only reveals the side that it wants to you to see. So whether you like this darling-devil or not, you have to concede that it's a fascinating and enigmatic individual.",
+				description: "Passionate Penguin: Aggressive yet gentle, outgoing but shy, stable yet flighty - everyone sees the penguin in a different way. It's that black and white thing: the penguin only reveals the side that it wants to you to see. So whether you like this darling-devil or not, you have to concede that it's a fascinating and enigmatic individual.",
 				scores: [
 					"2",
 					"3",
@@ -218,11 +221,16 @@ class SignupForm extends Component {
 		this.setState({
 			personaName:bestMatch.name,
 			personaPhoto:bestMatch.photo,
-			personaDescription:bestMatch.description
+			personaDescription:bestMatch.description,
+			isShow:true
 		});
 		
 		console.log(bestMatch);
-		alert(bestMatch.description);	
+
+
+		// alert(bestMatch.description);
+		
+		
 	}
 
 	handleSubmit(event) {
@@ -259,7 +267,14 @@ class SignupForm extends Component {
 			<div>
 
 				<Navbar />
+
 				<Survey.Survey model={model} onComplete={this.onComplete}/>
+				{this.state.isShow && 
+					<div>
+						<img src={this.state.personaPhoto} />
+						<p className = "descriptionPersona">{this.state.personaDescription} </p>
+					</div>
+				}
 				<div className="SignupForm">
 					<h2>Signup Form</h2>
 					<form>
