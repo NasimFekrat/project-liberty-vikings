@@ -4,7 +4,7 @@ import Navbar from '../Navbar'
 import Footer from '../Footer';
 
 const loginFormTitle = {
-	color: "Whitesmoke",
+	color: "whitesmoke",
 	fontFamily: "Raleway",
 	fontSize: "40px"
 }
