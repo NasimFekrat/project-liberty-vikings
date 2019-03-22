@@ -73,10 +73,10 @@ app.use(routes);
 
 // If no API routes are hit, send the React app
 // Serve the UI over express server
-// app.get("*", function (req, res) {
-//   if (process.env.NODE_ENV === "production") {
-//       res.sendFile(path.join(__dirname, "./client/build/index.html"));
-//   } else {
-//       res.sendFile(path.join(__dirname, './client/public/'));
-//   }
-// });
+app.get("*", function (req, res) {
+  if (process.env.NODE_ENV === "production") {
+      res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  } else {
+      res.sendFile(path.join(__dirname, './client/public/'));
+  }
+});
