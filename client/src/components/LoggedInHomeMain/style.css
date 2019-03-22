@@ -1,4 +1,16 @@
 .grid h2, h4, p {
-    color: black;
+    color: whitesmoke;
     font-family: 'Raleway', sans-serif;
+}
+
+.grid h2 {
+    font-size: 35px;
+}
+
+.grid h4 {
+    font-size: 25px;
+}
+
+.content {
+    margin: 100px;
 }

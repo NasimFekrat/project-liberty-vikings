@@ -4,6 +4,25 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import LoggedOut from '../LoggedOut';
 
+const modals = {
+  margin: "50px auto auto auto",
+  width: "1000px",
+  padding: "auto"
+}
+
+const message = {
+  color: "whitesmoke",
+  fontFamily: "Raleway",
+  fontSize: "30px",
+  padding: "10px"
+}
+
+const modalTitle = {
+  color: "black",
+  fontFamily: "Raleway",
+  fontSize: "20px"
+}
+
 class PostMainMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -101,12 +120,12 @@ class PostMainMenu extends React.Component {
       return (
         <div>
           <Navbar />
-          <div className="PostMainMenu">
+          <div className="PostMainMenu" style={modals}>
             <div className="row">
               <div className="col-sm-6">
                 <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">Create a Post</h5>
+                    <h5 className="card-title" style={modalTitle}>Create a Post</h5>
                     <div className="form-group">
                       <input
                         type="text"
@@ -133,13 +152,13 @@ class PostMainMenu extends React.Component {
                       <p className="text-muted">Created by: {this.state.searchedCreatedBy}</p>
                     </div>
                   </div>) : (
-                    <h3>No Results to Display</h3>
+                  <h3 style={message}>No Results to Display</h3>
                   )}
               </div>
               <div className="col-sm-6">
                 <div className="card">
                   <div className="card-body">
-                    <h5 className="card-title">Create a Post</h5>
+                    <h5 className="card-title" style={modalTitle}>Create a Post</h5>
                     <form id="createPostForm">
                       <div className="form-group">
                         <label htmlFor="createdBy">Created By</label>

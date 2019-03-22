@@ -16,19 +16,24 @@ const modalP = {
 }
 
 const bodyP = {
-  color: "black",
+  color: "whitesmoke",
   fontFamily: "Raleway",
   fontSize: "20px",
-  fontWeight: "bold"
+  // fontWeight: "bold"
 }
 const bodyTitle = {
-  color: "black",
+  color: "whitesmoke",
   fontFamily: "Raleway",
   fontWeight: "bold"
 }
 
 const title = {
   marginTop: "50px"
+}
+
+const button = {
+  color: "black",
+  fontFamily: "Raleway",
 }
 
 const PostStats = props => {
@@ -58,7 +63,7 @@ const PostStats = props => {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"><button type="button" className="btn btn-warning" style={bodyP}>01/18/2019</button></th>
+                      <th scope="row"><button type="button" className="btn btn-warning" style={button}>01/18/2019</button></th>
                       <td style={bodyP}>10</td>
                       <td style={bodyP}>1</td>
                       <td style={bodyP}>10</td>
@@ -83,19 +88,19 @@ const PostStats = props => {
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row"><button type="button" className="btn btn-warning" style={bodyP}>04/01/2018</button></th>
+                      <th scope="row"><button type="button" className="btn btn-warning" style={button}>04/01/2018</button></th>
                       <td style={bodyP}>15</td>
                       <td style={bodyP}>4</td>
                       <td style={bodyP}>8</td>
                     </tr>
                     <tr>
-                      <th scope="row"><button type="button" className="btn btn-warning" style={bodyP}>03/24/2018</button></th>
+                      <th scope="row"><button type="button" className="btn btn-warning" style={button}>03/24/2018</button></th>
                       <td style={bodyP}>37</td>
                       <td style={bodyP}>6</td>
                       <td style={bodyP}>2</td>
                     </tr>
                     <tr>
-                      <th scope="row"><button type="button" className="btn btn-warning" style={bodyP}>01/18/2018</button></th>
+                      <th scope="row"><button type="button" className="btn btn-warning" style={button}>01/18/2018</button></th>
                       <td style={bodyP}>10</td>
                       <td style={bodyP}>1</td>
                       <td style={bodyP}>10</td>
