@@ -216,21 +216,46 @@ a:active  {
 /* ======================= sign up form ======================= */
 
 .SignupForm {
-  margin-top: 30px;
+  margin-top: 50px;
   padding-bottom: 74px;
 
 }
 
 .SignupForm label {
-  color: white;
+  color: whitesmoke;
   font-weight: 700;
   font-size: 20px;
+  font-family: 'Raleway', cursive;
 }
 
 .descriptionPersona {
-  color: white;
+  color: whitesmoke;
 }
 
+.SignupForm h2 {
+  margin: 0px auto auto auto;
+  color: whitesmoke;
+  font-family: 'Raleway', cursive;
+  font-size: 40px;
+}
+
+.custom-file-label {
+  margin: 40px auto auto auto;
+  color: black;
+  width: 95%;
+}
+
+.custom-file-label text {
+  color: black;
+}
+
+.custom-file-input {
+  margin: 20px;
+}
+
+.profile-picture-select {
+  margin: 0px;
+}
 
 /* ======================= MEETING STATS ======================= */
 

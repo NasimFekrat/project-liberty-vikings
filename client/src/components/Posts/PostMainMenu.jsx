@@ -23,6 +23,15 @@ const modalTitle = {
   fontSize: "20px"
 }
 
+const modalHeadings = {
+  color: "black",
+  fontFamily: "Raleway"
+}
+
+const button = {
+  fontFamily: "Raleway"
+}
+
 class PostMainMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -136,7 +145,7 @@ class PostMainMenu extends React.Component {
                         onChange={this.onChange}
                         placeholder="ABC123@"
                       />
-                      <button type="submit" className="btn btn-primary" onClick={this.onSearch} id="postSearch">Search</button>
+                      <button type="submit" className="btn btn-warning" onClick={this.onSearch} id="postSearch" style={button}>Search</button>
                     </div>
                   </div>
                 </div>
@@ -149,7 +158,7 @@ class PostMainMenu extends React.Component {
                         <small className="text-muted">{this.state.searchedEventDate}</small>
                       </div>
                       <a href={"/current/?id=" + this.state.searchedPostId}><strong>Read the other's Posts</strong></a>
-                      <p className="text-muted">Created by: {this.state.searchedCreatedBy}</p>
+                      <p className="text-muted" style={modalHeadings}>Created by: {this.state.searchedCreatedBy}</p>
                     </div>
                   </div>) : (
                   <h3 style={message}>No Results to Display</h3>
@@ -161,7 +170,7 @@ class PostMainMenu extends React.Component {
                     <h5 className="card-title" style={modalTitle}>Create a Post</h5>
                     <form id="createPostForm">
                       <div className="form-group">
-                        <label htmlFor="createdBy">Created By</label>
+                        <label htmlFor="createdBy" style={modalHeadings}>Created By</label>
                         <input
                           type="text"
                           className="form-control"
@@ -172,7 +181,7 @@ class PostMainMenu extends React.Component {
                         />
                       </div>
                       <div className="form-group">
-                        <label htmlFor="eventDate">Event Date</label>
+                        <label htmlFor="eventDate" style={modalHeadings}>Event Date</label>
                         <input
                           type="date"
                           className="form-control"
@@ -184,7 +193,7 @@ class PostMainMenu extends React.Component {
                         />
                       </div>
                       <div className="form-group">
-                        <label htmlFor="location">Location</label>
+                        <label htmlFor="location" style={modalHeadings}>Location</label>
                         <input
                           type="text"
                           className="form-control"
@@ -197,7 +206,7 @@ class PostMainMenu extends React.Component {
                       </div>
                       {this.state.postID ? <div><p>Click or share this link: <a href={"/current/?id=" + this.state.postID}>{`${window.location.origin}${window.location.pathname}`}/current/?id={this.state.postID}</a></p></div> : <p>No post is currently available</p>}
 
-                      <button type="submit" className="btn btn-primary" onClick={this.onSubmit}>Submit</button>
+                      <button type="submit" className="btn btn-warning" onClick={this.onSubmit} style={button}>Submit</button>
                     </form>
                   </div>
                 </div>
