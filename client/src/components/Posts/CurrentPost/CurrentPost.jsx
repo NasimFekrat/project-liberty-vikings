@@ -4,6 +4,18 @@ import Tablerow from "./Subcomponents/Tablerow"
 import Modal from "./Subcomponents/Modal/Modal"
 import axios from "axios";
 import './currentPost.css';
+import Navbar from '../../Navbar';
+import Footer from '../../Footer';
+
+const paragraphStyle = {
+  margin: "40px",
+  fontFamily: "Raleway"
+}
+
+const headingStyle = {
+  margin: "600px",
+  fontFamily: "Raleway"
+}
 
 class Review extends React.Component {
 
@@ -193,9 +205,7 @@ class Review extends React.Component {
     if (this.props.user && !this.state.ended) {
       return (
         <div>
-          <div className="Home">
-            <h1> Roomer </h1>
-          </div>
+         <Navbar />
           <div className="centerTable">
             <div className="table-responsive col-12">
               <table className="tableBG table table-bordered">
@@ -215,51 +225,32 @@ class Review extends React.Component {
             </div>
           </div>
 
-          <footer className="logoutFooter font-small blue">
-            <div className="footer-copyright py-3 text-center">
-              © Copyright:
-       				 	<a> Liberty Vikings </a>
-            </div>
-          </footer>
+        <Footer />
         </div>
       )
     }
     else if (this.state.ended) {
       return (
         <div>
-          <div className="Home">
-            <h1> Roomer </h1>
-          </div>
+          <Navbar />
           <div className="Review">
-            <p>This post is currently unavailable or has ended. Please contact your post coordinator if you feel this is an error</p>
+            <p style={paragraphStyle}>This post is currently unavailable or has ended. Please contact your post coordinator if you feel this is an error</p>
           </div>
-          <footer className="logoutFooter font-small blue">
-            <div className="footer-copyright py-3 text-center">
-              © Copyright:
-       				 	<a> Liberty Vikings </a>
-            </div>
-          </footer>
-        </div>
+         <Footer />
+         </div>
       )
     }
     else {
       return (
         <div>
-          <div className="Home">
-            <h1> Roomer </h1>
-          </div>
+          <Navbar />
           <div className="Review">
             <br />
-            <h1> Current Post </h1>
+            <h1 style={headingStyle}> Current Post </h1>
             <br />
-            <p className="sorry">Sorry, you really need to be logged in for this page.</p>
+            <p className="sorry" style={paragraphStyle}>Sorry, you really need to be logged in for this page.</p>
           </div>
-          <footer className="logoutFooter font-small blue">
-            <div className="footer-copyright py-3 text-center">
-              © Copyright:
-       				 	<a> Liberty Vikings </a>
-            </div>
-          </footer>
+          <Footer />
         </div>
       )
     }

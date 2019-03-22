@@ -1,6 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { Bar, Bubble } from 'react-chartjs-2';
+import Navbar from "../../Navbar";
+import Footer from "../../Footer";
+
+const text = {
+  fontFamily: 'Raleway'
+}
 
 class PostDetail extends React.Component {
   constructor(props) {
@@ -59,9 +65,7 @@ class PostDetail extends React.Component {
   render() {
     return (
       <div>
-        <div className="Home">
-          <h1> Roomer </h1>
-        </div>
+        <Navbar />
 
         < div className="postResults">
           <div className="chart">
@@ -70,7 +74,7 @@ class PostDetail extends React.Component {
                 <div className="card">
 
                   <div className="card-body">
-                    <h5 className=" postResultsTitle card-title">Post Results</h5>
+                    <h5 className=" postResultsTitle card-title" style={text}>Post Results</h5>
                     <Bar
                       data={this.state.charData}
                       //dynamically rendered graph will not start at zero unless specified
@@ -104,12 +108,7 @@ class PostDetail extends React.Component {
             </div> */}
           </div>
         </div>
-        <footer className="absoluteFooter font-small blue">
-					<div className="footer-copyright py-3 text-center">
-						© Copyright:
-       				 <a> Liberty Viking </a>
-					</div>
-				</footer>
+        <Footer />
       </div>
     );
   }

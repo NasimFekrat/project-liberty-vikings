@@ -1,8 +1,23 @@
 .navbar-brand {
 font-family: 'Comfortaa', cursive;
 font-size: 40px;
+margin: 15px auto 10px auto;
 }
 
 .navbar {
     background-color: black;
+}
+
+.image {
+    width: 80px;
+    background-color: burlywood;
+    margin: 10px auto auto auto;
+    padding: 10px;
+    border-radius: 10%;
+    border: 5px solid firebrick;
+}
+
+.logo {
+    height: 100px;
+    margin-left: 20px;
 }

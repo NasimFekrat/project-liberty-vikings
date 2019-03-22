@@ -16,8 +16,6 @@ const SignupFormStyle = {
 const formColOne = {
 	margin: "20px auto 20px auto",
 	width: "50%",
-
-
 }
 
 const formColTwo = {
