@@ -3,6 +3,12 @@ import { Redirect } from 'react-router-dom'
 import Navbar from '../Navbar'
 import Footer from '../Footer';
 
+const loginFormTitle = {
+	color: "Whitesmoke",
+	fontFamily: "Raleway",
+	fontSize: "40px"
+}
+
 class LoginForm extends Component {
 	constructor() {
 		super()
@@ -40,7 +46,7 @@ class LoginForm extends Component {
 					<Navbar />
 
 					<div className="marginLoginForm">
-						<h1>Login form</h1>
+						<h2 style={loginFormTitle}>Login form</h2>
 						<form>
 							<label htmlFor="username">Username: </label>
 							<input

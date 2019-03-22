@@ -5,7 +5,7 @@ import "./style.css";
 function LoggedOutHomeMain() {
     return (
     <div className="loggedOut">
-    <h1> WELCOME to ROOMER App! </h1>
+    <h2> WELCOME to ROOMER App! </h2>
     <br />
     {/* <h1> you are logged out </h1> */}
     {/* box links  */}
