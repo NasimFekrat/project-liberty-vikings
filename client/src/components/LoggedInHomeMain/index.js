@@ -6,26 +6,26 @@ function LoggedInHomeMain() {
     return (
         <section className="grid">
             <div className="content">
-            <h2>Are you ready to share the house!</h2>
+            <h2>Are you ready to share a house?</h2>
             <h4>Available Rooms</h4>
 
             <div className="row">
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
                         <img className="teamMatePic" src={require("../../images/hotel.png")} alt="thumbnail"></img> 
-								<p>Picture</p>
+								{/* <p>Picture</p> */}
                     </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
                     <img className="teamMatePic" src={require("../../images/hotel.png")} alt="thumbnail"></img> 
-								<p>Picture</p>
+								{/* <p>Picture</p> */}
                     </div>
                 </div>
                 <div className="col-md-6 col-lg-4">
                     <div className="teamMate">
                         <img className="teamMatePic" src={require("../../images/hotel.png")} alt="thumbnail"></img> 
-								<p>Picture</p>
+								{/* <p>Picture</p> */}
                     </div>
                 </div>
             </div>
