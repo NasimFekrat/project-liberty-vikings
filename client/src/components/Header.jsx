@@ -4,14 +4,15 @@ import Emoji from 'react-emoji-render';
 
 const headerStyle = {
 	color: "whitesmoke",
-	padding: "10px"
+	padding: "10px",
+	fontFamily: "Raleway"
 };
 
 const Header = props => {
 
 	let Greeting
 	if (props.user === null) {
-		Greeting = <p style={headerStyle}>Hello <Emoji text=":)"/></p>
+		Greeting = <p style={headerStyle}>Hey, roomy! <Emoji text=":)"/></p>
 	} else if (props.user.firstName) {
 		Greeting = (
 			<p style={headerStyle}>
