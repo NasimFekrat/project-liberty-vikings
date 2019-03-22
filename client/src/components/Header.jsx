@@ -11,7 +11,7 @@ const Header = props => {
 
 	let Greeting
 	if (props.user === null) {
-		Greeting = <p>Hello <Emoji text=":)"/></p>
+		Greeting = <p style={headerStyle}>Hello <Emoji text=":)"/></p>
 	} else if (props.user.firstName) {
 		Greeting = (
 			<p style={headerStyle}>
