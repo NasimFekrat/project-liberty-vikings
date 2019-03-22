@@ -307,6 +307,7 @@ a:active  {
   color: white;
   font-size: 18px;
   font-weight: 550;
+  font-family: "Raleway", cursive;
 }
 
 .marginLoginForm button {
@@ -325,6 +326,10 @@ a:active  {
   color: white;
 }
 
+.login-button {
+  font-family: "Raleway", cursive;
+}
+
 /* ======================= side hamburger menu for react.js ======================= */
 
 /* Position and sizing of burger button */
@@ -334,8 +339,8 @@ a:active  {
   position: absolute;
   width: 30px;
   height: 25px;
-  left: 246px;
-  top: 33px;
+  left: 310px;
+  top: 32px;
 }
  
 /* Color/shape of burger icon bars */

@@ -28,7 +28,11 @@ const modalHeadings = {
   fontFamily: "Raleway"
 }
 
-const button = {
+const cardStyle = {
+  backgroundColor: "whitesmoke"
+}
+
+const buttonStyle = {
   fontFamily: "Raleway"
 }
 
@@ -132,7 +136,7 @@ class PostMainMenu extends React.Component {
           <div className="PostMainMenu" style={modals}>
             <div className="row">
               <div className="col-sm-6">
-                <div className="card">
+                <div className="card" style={cardStyle}>
                   <div className="card-body">
                     <h5 className="card-title" style={modalTitle}>Create a Post</h5>
                     <div className="form-group">
@@ -145,7 +149,7 @@ class PostMainMenu extends React.Component {
                         onChange={this.onChange}
                         placeholder="ABC123@"
                       />
-                      <button type="submit" className="btn btn-warning" onClick={this.onSearch} id="postSearch" style={button}>Search</button>
+                      <button type="submit" className="btn btn-warning" onClick={this.onSearch} id="postSearch" style={buttonStyle}>Search</button>
                     </div>
                   </div>
                 </div>
@@ -165,7 +169,7 @@ class PostMainMenu extends React.Component {
                   )}
               </div>
               <div className="col-sm-6">
-                <div className="card">
+                <div className="card" style={cardStyle}>
                   <div className="card-body">
                     <h5 className="card-title" style={modalTitle}>Create a Post</h5>
                     <form id="createPostForm">
@@ -206,7 +210,7 @@ class PostMainMenu extends React.Component {
                       </div>
                       {this.state.postID ? <div><p>Click or share this link: <a href={"/current/?id=" + this.state.postID}>{`${window.location.origin}${window.location.pathname}`}/current/?id={this.state.postID}</a></p></div> : <p>No post is currently available</p>}
 
-                      <button type="submit" className="btn btn-warning" onClick={this.onSubmit} style={button}>Submit</button>
+                      <button type="submit" className="btn btn-warning" style={buttonStyle} onClick={this.onSubmit}>Submit</button>
                     </form>
                   </div>
                 </div>
